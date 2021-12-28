@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi RSquare Internship Assignmet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsiveness.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="headerSpace">
+        <!-- <header id="header"> -->
+            <img id="AniketLogo" src="Aniket Logo.png" alt="Image">
+            <button id="explore">Explore  <i class="fas fa-angle-down" style="font-size: 16px"></i></button>
+            <input type="text" placeholder="Search Course">
+            <i id="icon" class="fa fa-search"></i>
+            <button id="search"><i class="fa fa-search" style="font-size: 16px"></i>  Search</button>
+        <!-- </header> -->
+    </div>
+    <div class="space1">
+        <div class="left">
+            <button id="b"><i class="fa fa-home" style="font-size: 16px"></i>  Home</i></button>
+            <button id="b"><i class="fa fa-bars" style="font-size: 16px"></i>  My Learning</button>
+            <button id="b"><i class="fa fa-folder" style="font-size: 16px"></i>  Learning Path</button>
+            <button id="b"><i class="fas fa-award" style="font-size: 16px"></i>  Performance</button>
+            <button id="b"><i class="fas fa-store-alt-slash" style="font-size: 16px"></i>  Cart</button>
+            <button id="b"><i class="far fa-sun" style="font-size: 16px"></i>  Settings</button>
+        </div>
+        <div class="right">
+            <p>Performance</p>
+            <div class="part1">
+                <p>Hello Aniket!!</p>
+                <button id="download">Download Report  <i class="fa fa-download"></i></button>
+            </div>
+            <div class="subpart11">
+                <input id="searchTeam" type="text" placeholder="Search Your Team">
+            <button id="search"><i class="fa fa-search" style="font-size: 16px"></i>  Search</button>
+            </div>
+            <div class="part2">
+                <div class="pie">
+                    <p>Course</p>
+                    <div id="course">
+                    </div>
+                </div>
+                <div class="line">
+                    <p>Year Statistics</p>
+                    <div id="statistics">
+                    </div>
+                </div>
+            </div>
+            <div class="part3">
+                <div class="announcement">
+                    <p>Announcement</p>
+                    <div class="announcementNew">
+                    </div>
+                </div>
+                <div class="bar">
+                    <p>Visitors</p>
+                    <div id="barchart">
+                    </div>
+                </div>
+            </div>
+            <div class="part4">
+                <div class="subpart1">
+                    <p>Courses In Demand</p>
+                    <button id="b1"><i class="fa fa-book"></i>  Introduction To Hadoop</button>
+                    <button id="b1"><i class="fa fa-book"></i>  Getting Started With Hadoop</button>
+                    <button id="b1"><i class="fa fa-book"></i>  Introduction To Hadoop</button>
+                    <button id="b1"><i class="fa fa-book"></i>  Getting Started With Hadoop</button>
+                    <button id="b1"><i class="fa fa-book"></i>  Introduction To Hadoop</button>
+                    <button id="b1"><i class="fa fa-book"></i>  Getting Started With Hadoop</button>
+                </div>
+                <div class="subpart2">
+                    <p>Recent Activity</p>
+                </div>
+                <div class="subpart3">
+                    <p>Recent Actvivity</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Course Completed', 9],
+  ['Ongoing Courses', 2],
+  ['Not Started', 4],
+  ['Pending Courses', 2],
+//   ['Sleep', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Courses', 'width':550, 'height':350};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('course'));
+  chart.draw(data, options);
+
+  var chart1 = new google.visualization.LineChart(document.getElementById('statistics'));
+  chart1.draw(data, options);
+
+  var chart2 = new google.visualization.BarChart(document.getElementById('barchart'));
+  chart2.draw(data, options);
+}
+</script>
+
+</html>
